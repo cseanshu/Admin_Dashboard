@@ -35,7 +35,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const SideBar = () => {
   const theme = useTheme();
   const colors = tokans(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [selected, setSelected] = useState("Dashboard");
 
   return (
@@ -65,8 +65,8 @@ const SideBar = () => {
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+            onClick={() => setIsCollapsed(isCollapsed==false)}
+            icon={isCollapsed ? <MenuOutlinedIcon /> :undefined}
             style={{
               margin: "10px 0 20px 0",
               color: colors.grey[100],
